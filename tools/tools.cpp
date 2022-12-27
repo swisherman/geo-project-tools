@@ -47,7 +47,11 @@ int main()
     Tokenizer tokenizer(cmdline);
     wchar_t separator = L' ';
 	const std::vector<std::wstring >*  myVector=tokenizer.Split(separator);
-    std::cout << "Hello World!\n";
+	for (auto argument : *myVector)
+	{
+		std::wcout << L"Argument " << argument << std::endl;
+
+   }
 
 }
 
