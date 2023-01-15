@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <WORDTOFIND>cout</WORDTOFIND>
+    <RECURSIVE>true</RECURSIVE>
+    <EXTENSION>*.cpp;*.c;*.h</EXTENSION>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="WORDTOFIND">
+      <Value>$(WORDTOFIND)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="RECURSIVE">
+      <Value>$(RECURSIVE)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="EXTENSION">
+      <Value>$(EXTENSION)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
