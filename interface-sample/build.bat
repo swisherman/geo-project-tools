@@ -3,8 +3,9 @@ if not exist nodejs mkdir nodejs
 copy interface.cpp nodejs
 copy thing.js nodejs
 copy app.js nodejs
+copy enumandstr.cpp nodejs
 cd nodejs
-call emcc -g3 --pre-js ./thing.js -s MODULARIZE -lembind interface.cpp -o interface.js
+call emcc -g3 -lembind -c enumandstr.cpp                                     &&  emcc -g3 --pre-js ./thing.js -s MODULARIZE -lembind interface.cpp      enumandstr.o                                     -o interface.js 
 pause
 cd ..
 
