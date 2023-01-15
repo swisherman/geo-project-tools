@@ -3,7 +3,7 @@ const myinterface = require('./interface')
 
 
 let thisModule;
-
+let myGoose;
 const go = async () => {
 
     thisModule = await myinterface();
@@ -25,8 +25,7 @@ const go = async () => {
     });
     
     var instance = new DerivedClass;
-    
-    thisModule.Interface.getStringFromInstance(instance); // "hello"
+    myGoose=new thisModule.Goose();
     instance.delete();
     Note
 

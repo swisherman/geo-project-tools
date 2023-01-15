@@ -1,17 +1,10 @@
 #include <emscripten/bind.h>
+#include <emscripten/val.h>
 #include <string>
 
 using namespace emscripten;
 
-
 struct Interface {
-    std::string goose;
-    Interface() {
-        goose="type of bird with long neck";
-    };
-    static std::string getStringFromInstance(const Interface & instance) {
-    return instance.goose;
-  }
     virtual void invoke(const std::string& str) = 0;
 };
 
@@ -26,6 +19,28 @@ EMSCRIPTEN_BINDINGS(interface) {
     class_<Interface>("Interface")
         .function("invoke", &Interface::invoke, pure_virtual())
         .allow_subclass<InterfaceWrapper>("InterfaceWrapper")
-           .class_function("getStringFromInstance", &Interface::getStringFromInstance)
         ;
+}
+
+
+class Goose {
+public:
+std::string frog;
+
+std::string  Get() const
+{
+    return frog;
+}
+
+void Set(std::string x)
+{
+    frog=x;
+}
+};
+
+EMSCRIPTEN_BINDINGS(goosey) {
+        class_<Goose>("Goose")
+            .constructor()
+            .property("goose", &Goose::Get,&Goose::Set)
+    ;
 }
