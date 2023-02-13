@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            var instance=0;
+            var Module = {
+            onRuntimeInitialized: function() {
+                instance=1;
+                Module.add(9,6)
+            }
+            };
+            function Press() {
+              
+            }
+        </script>
+<script src="./browsermain.js"></script>
+    </head>
+    <body>
+        <button type="button" onclick="Press()">Click Me!</button>
+     
+    </body>
+</html>
