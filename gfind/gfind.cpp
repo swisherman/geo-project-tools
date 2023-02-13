@@ -79,12 +79,12 @@ S< std::string> s;
 
 typedef S< double > VDouble;
 
-template <class T, T  & u>
+template <class T, T   u>
 class Model {
 
     T d;
 public:
-    Model<T,u>() 
+    Model<T,u >() 
     {
         d = u;
     }
